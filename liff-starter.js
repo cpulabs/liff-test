@@ -99,10 +99,10 @@ function initializeLiff(myLiffId) {
                   });
 
               //
-              liff.closeWindow();
+              //liff.closeWindow();
 
 
-            liff.closeWindow();
+            //liff.closeWindow();
         })
         .catch((err) => {
             document.getElementById('liffAppContent').classList.add('hidden');
