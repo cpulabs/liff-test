@@ -105,8 +105,8 @@ function initializeLiff(myLiffId) {
                   });
 
               //
-              alert('位置情報を送信しました。');
-              liff.closeWindow();
+              //alert('位置情報を送信しました。');
+              //liff.closeWindow();
         })
         .catch((err) => {
             document.getElementById('liffAppContent').classList.add('hidden');
