@@ -85,6 +85,11 @@ function initializeLiff(myLiffId) {
                     'maximumAge': 2000,
                 });
               */
+        
+              if (!liff.isApiAvailable('shareTargetPicker')) {
+                  alert('This LINE App did not support shareTargetPicker. Please update LINE app.');
+                  liff.closeWindow();
+              }    
 
               liff.shareTargetPicker([{
                       type: 'location',
@@ -93,16 +98,15 @@ function initializeLiff(myLiffId) {
                       'latitude': 37.359531,
                       'longitude': 127.105377
                   }])
-                  .then(alert('Sent location info to your friend'))
+                  .then(console.log("ShareTargetPicker was launched"))
                   .catch(function(res) {
-                      alert('Failed to launch ShareTargetPicker')
+                      alert('Failed to launch ShareTargetPicker');
+                      liff.closeWindow();
                   });
 
               //
-              //liff.closeWindow();
-
-
-            //liff.closeWindow();
+              alert('位置情報を送信しました。');
+              liff.closeWindow();
         })
         .catch((err) => {
             document.getElementById('liffAppContent').classList.add('hidden');
